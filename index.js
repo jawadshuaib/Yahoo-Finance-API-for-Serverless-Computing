@@ -1,5 +1,3 @@
-const cheerio = require('cheerio');
-const axios = require ('axios');
 /**
  * Author: Jawad Shuaib 2022
  * API for getting stock data from Yahoo Finance
@@ -14,8 +12,11 @@ const axios = require ('axios');
  * ETF holdings: /stock?stock=arkk
  * Check if stock is an ETF: /stock?stock=arkk&isETF=true
  */
+
+const cheerio = require('cheerio');
+const axios = require ('axios');  
+
 exports.index = (req, res) => {
-  // console.log (req.query.stock);
   switch (req.path) {
     case '/stock':
       return stock(req, res)
